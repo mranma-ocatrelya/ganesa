@@ -37,21 +37,29 @@ gns:tc.creditsByCategory a rdfs:Class ;
 gns:tc.creditsByCategory.credits a rdfs:Class ;
         rdfs:subClassOf gns:tc.creditsByCategory .
 
-gns:tc.creditsByCategory.credits.nameId a rdf:Property ;
+gns:tc.creditsByCategory.credits.nameId a tc.creditsByCategory.credits ;
         rdfs:domain owl:NamedIndividual ;
         rdfs:range owl:NamedIndividual .
 
-gns:tc.creditsByCategory.credits.roles a rdf:Property ;
+gns:tc.creditsByCategory.credits.roles a tc.creditsByCategory.credits ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range owl:NamedIndividual .
+
+gns:tc.originalTitle a gns:title_essential_v2 ;
         rdfs:domain owl:NamedIndividual ;
         rdfs:range owl:NamedIndividual .
 
 gns:tc.releaseDates a rdfs:Class ;
         rdfs:subClassOf gns:title_essential_v2 .
 
-gns:tc.releaseDates.country a rdf:Property ;
+gns:tc.releaseDates.country a gns:tc.releaseDates ;
         rdfs:domain owl:NamedIndividual ;
         rdfs:range rdfs:Literal .
 
-gns:tc.releaseDates.date a rdf:Property ;
+gns:tc.releaseDates.date a gns:tc.releaseDates ;
         rdfs:domain owl:NamedIndividual ;
         rdfs:range xsd:date .
+
+gns:tc.titleId a gns:title_essential_v2 ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range owl:NamedIndividual .
