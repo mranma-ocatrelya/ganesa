@@ -5,4 +5,41 @@
 
 <http://mranma-ocatrelya.github.io/ganesa/init.ttl#> a owl:Ontology .
 
-gns:nc.filmography.titleId a rdf:Property .
+gns:name_essential_v1 a rdfs:Class ;
+        rdfs:subClassOf rdf:Property .
+
+gns:nc.filmography a rdfs:Class ;
+        rdfs:subClassOf gns:name_essential_v1 .
+
+gns:nc.filmography.roles a gns:nc.filmography ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range owl:NamedIndividual .
+
+gns:nc.filmography.titleId a gns:nc.filmography ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range owl:NamedIndividual .
+
+gns:nc.name a gns:name_essential_v1 ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range owl:NamedIndividual .
+
+gns:nc.nameId a gns:name_essential_v1 ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range owl:NamedIndividual .
+
+gns:title_essential_v2 a rdfs:Class ;
+        rdfs:subClassOf rdf:Property .
+
+gns:tc.creditsByCategory a rdfs:Class ;
+        rdfs:subClassOf gns:title_essential_v2 .
+
+gns:tc.creditsByCategory.credits a rdfs:Class ;
+        rdfs:subClassOf gns:tc.creditsByCategory .
+
+gns:tc.creditsByCategory.credits.nameId a rdf:Property ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range owl:NamedIndividual .
+
+gns:tc.creditsByCategory.credits.roles a rdf:Property ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range owl:NamedIndividual .
