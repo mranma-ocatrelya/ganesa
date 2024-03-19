@@ -1,6 +1,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix gns: <http://mranma-ocatrelya.github.io/ganesa/init.ttl#> .
 
 <http://mranma-ocatrelya.github.io/ganesa/init.ttl#> a owl:Ontology .
@@ -43,3 +44,14 @@ gns:tc.creditsByCategory.credits.nameId a rdf:Property ;
 gns:tc.creditsByCategory.credits.roles a rdf:Property ;
         rdfs:domain owl:NamedIndividual ;
         rdfs:range owl:NamedIndividual .
+
+gns:tc.releaseDates a rdfs:Class ;
+        rdfs:subClassOf gns:title_essential_v2 .
+
+gns:tc.releaseDates.country a rdf:Property ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range rdfs:Literal .
+
+gns:tc.releaseDates.date a rdf:Property ;
+        rdfs:domain owl:NamedIndividual ;
+        rdfs:range xsd:date .
